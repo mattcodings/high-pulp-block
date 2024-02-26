@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import {RichText, useBlockProps} from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -15,10 +15,25 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {Element} Element to render.
  */
-export default function save() {
+export default function save({attributes}) {
+	let starIcons = Array(5).fill('*',0,attributes.stars).join('')
+	const divStyles = {
+		borderColor: attributes.borderColor,
+	}
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'High Pulp Blocks – hello from the saved content!' }
+		<p { ...useBlockProps.save({className:attributes.backgroundColorClass, style: divStyles}) }>
+			<div className="stars">{starIcons}</div>
+<RichText.Content className="quote" tagName="div" value={attributes.quote}/>
+
+			<div className="quote-profile">
+				<div className="photo">
+					<img src={attributes.imgUrl} alt="Photo of Eric Foreman"/>
+				</div>
+				<div className="text">
+					<p className="author">{attributes.author}</p>
+					<p className="location">{attributes.location}</p>
+				</div>
+			</div>
 		</p>
 	);
 }
