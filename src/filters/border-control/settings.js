@@ -10,9 +10,29 @@ function addBorderAttributes(settings, name) {
 		default: '',
 	}
 
+	settings.attributes.borderPadding = {
+		type: 'number',
+		default: 10,
+	}
+
+	settings.attributes.borderColor = {
+		type: 'string',
+		default: '',
+	}
+
+	settings.attributes.borderWidth = {
+		type: 'number',
+		default: 10,
+	}
+
+	settings.attributes.borderRadius = {
+		type: 'number',
+		default: 10,
+	}
+
 	// (modify any additional settings)
 
 	return settings;
 }
 
-addFilter('blocks.registerBlockType', 'your-plugin-name/border-control/add-border-attributes', addBorderAttributes);
+addFilter('blocks.registerBlockType', 'mz/border-control/add-border-attributes', addBorderAttributes);

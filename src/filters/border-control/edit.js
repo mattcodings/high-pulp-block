@@ -1,7 +1,15 @@
 import {createHigherOrderComponent} from '@wordpress/compose';
 import {Fragment} from '@wordpress/element';
 import {InspectorControls} from "@wordpress/block-editor";
-import {PanelBody, PanelRow, SelectControl} from "@wordpress/components";
+import {
+	ColorPalette,
+	ColorPicker,
+	PanelBody,
+	PanelRow,
+	RangeControl,
+	SelectControl,
+	TextControl
+} from "@wordpress/components";
 import {addFilter} from '@wordpress/hooks';
 import React from "react";
 
@@ -14,9 +22,10 @@ function blockWrapper(WrappedBlock) {
 
 			let divStyles = {
 				borderStyle: attributes.borderStyle || 'none',
-				borderWidth: '2px',
-				borderColor: 'black',
-				padding: '10px',
+				borderWidth: attributes.borderWidth || '2px',
+				borderColor: attributes.borderColor || 'black',
+				padding: attributes.borderPadding + 'px',
+				borderRadius:attributes.borderRadius + 'px'
 			}
 
 			return (
@@ -37,7 +46,45 @@ function blockWrapper(WrappedBlock) {
 									]}
 								/>
 							</PanelRow>
+
+								<RangeControl
+								label="Border Width"
+								value={ attributes.borderWidth }
+								onChange={ value => setAttributes({borderWidth: parseInt(value)} ) }
+								min={ 0.5 }
+								max={ 5 }
+								step={0.5}
+							/>
+
+							<PanelRow>
+								<ColorPalette
+									colors={[
+										{name: 'cyan', color:'#00ffFF'},
+										{name: 'yellow', color:'#FFff00'},
+										{name: 'violet', color:'#ff00ff'},
+									]}
+									value={attributes.borderColor}
+									onChange={borderColor => setAttributes({borderColor})}
+									disableCustomColors={true}
+								/>
+							</PanelRow>
+							<PanelRow>
+								<TextControl
+								label="Padding"
+								value={attributes.borderPadding}
+								onChange={value=>setAttributes({borderPadding:parseInt(value)})}
+								/> px
+							</PanelRow>
+							<RangeControl
+								label="Border Radius"
+								value={ attributes.borderRadius }
+								onChange={ value => setAttributes({borderRadius: parseInt(value)} ) }
+								min={ 0 }
+								max={ 10 }
+								step={1}
+							/>
 						</PanelBody>
+
 					</InspectorControls>
 
 					{/* This is a wrapper -- WrappedBlock is the block you are editing/wrapping */}
@@ -56,4 +103,4 @@ function blockWrapper(WrappedBlock) {
 const borderComponent = createHigherOrderComponent(blockWrapper, 'border-control');
 
 // register our filter with WordPress
-addFilter('editor.BlockEdit', 'your-plugin-name/border-control/block-wrapper', borderComponent);
+addFilter('editor.BlockEdit', 'mz/border-control/block-wrapper', borderComponent);
