@@ -5,6 +5,14 @@ add_action( 'init', function() {
 		'pulpy', // slug used in pattern files
 		['label' => 'Extra Pulpy'] // what the user sees
 	);
+	register_block_pattern_category(
+		'menu', // slug used in pattern files
+		['label' => 'Menu Item'] // what the user sees
+	);
+	register_block_pattern_category(
+		'hera', // slug used in pattern files
+		['label' => 'HERA Course'] // what the user sees
+	);
 });
 
 // register block patterns found in this

@@ -46,7 +46,7 @@
 
 			<!-- wp:buttons -->
 			<div class="wp-block-buttons"><!-- wp:button -->
-				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Buy Now</a></div>
+				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Buy Nows</a></div>
 				<!-- /wp:button --></div>
 			<!-- /wp:buttons --></div>
 		<!-- /wp:column -->
