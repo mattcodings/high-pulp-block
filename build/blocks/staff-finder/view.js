@@ -28,7 +28,7 @@ class BlockApp extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component) 
     super(props);
 
     // 	ajax call
-    fetch('/wp-json/wp/v2/staff').then(response => response.json()).then(json => {
+    fetch('/wp-json/wp/v2/staff?_embed').then(response => response.json()).then(json => {
       console.log(json);
       this.setState({
         staff: json
@@ -106,7 +106,23 @@ class StaffListItem extends (react__WEBPACK_IMPORTED_MODULE_0___default().Compon
     const {
       person
     } = this.props;
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, person.title.rendered);
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "flip-card"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "flip-card-inner"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "flip-card-front"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: person?._embedded?.['wp:featuredmedia']?.['0'].source_url || "https://www.svgrepo.com/show/508699/landscape-placeholder.svg"
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "flip-card-back"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      className: "name"
+    }, person.title.rendered), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "position"
+    }, person.acf.staff_position), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "bio"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "If I Was A Bird, I\u2019d Fly Into A Ceiling Fan.")))));
   }
 }
 

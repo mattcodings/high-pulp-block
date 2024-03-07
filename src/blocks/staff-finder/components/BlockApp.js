@@ -10,7 +10,7 @@ state = {
 		super(props);
 
 	// 	ajax call
-		fetch('/wp-json/wp/v2/staff').then(response => response.json())
+		fetch('/wp-json/wp/v2/staff?_embed').then(response => response.json())
 			.then(json=>{
 				console.log(json);
 				this.setState({staff:json});
@@ -34,7 +34,8 @@ doFilter(filterKeyword){
 		return (
 			<div>
 				<h3>Staff Finder</h3>
-				<label>Search <input type="text" value={this.state.filterKeyword} onInput={e => this.doFilter(e.target.value)}/></label>
+				<label>Search <input type="text" value={this.state.filterKeyword}
+									 onInput={e => this.doFilter(e.target.value)}/></label>
 				<StaffList staff={this.state.filteredStaff}/>
 			</div>
 		)
