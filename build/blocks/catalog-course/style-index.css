@@ -1,16 +1,1 @@
-/*!*************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/catalog-course/style.scss ***!
-  \*************************************************************************************************************************************************************************************************************************************************************/
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
-.wp-block-mz-catalog-course {
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/*# sourceMappingURL=style-index.css.map*/
+.wp-block-mz-catalog-course{display:flex;flex-wrap:wrap;padding:10px}

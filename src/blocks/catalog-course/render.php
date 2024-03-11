@@ -22,6 +22,7 @@ $query = new WP_Query([
 	?>
 	<a class="catalog-course" href="<?=get_the_permalink()?>">
 		<h3><?= get_the_title() ?></h3>
+		<h4>hello world</h4>
 		<?php endwhile; ?>
 	</a>
 </p>

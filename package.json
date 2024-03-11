@@ -5,7 +5,10 @@
 	"author": "The WordPress Contributors",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
-	"files": ["build","*.php"],
+	"files": [
+		"build",
+		"*.php"
+	],
 	"scripts": {
 		"build": "wp-scripts build",
 		"format": "wp-scripts format",
@@ -14,7 +17,8 @@
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
 		"start": "wp-scripts start",
-		"env": "wp-env"
+		"env": "wp-env",
+		"deploy":  "wp-scripts build && wp-scripts plugin-zip"
 	},
 	"devDependencies": {
 		"@wordpress/block-editor": "^12.19.1",
@@ -22,5 +26,9 @@
 		"@wordpress/env": "^9.3.0",
 		"@wordpress/scripts": "^27.2.0",
 		"react": "^18.2.0"
+	},
+	"dependencies": {
+		"bootstrap": "^5.3.3",
+		"react-bootstrap": "^2.10.1"
 	}
 }
