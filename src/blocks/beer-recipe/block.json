@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "mz/beer-recipe",
+	"version": "0.1.0",
+	"title": "Beer Recipe",
+	"category": "design",
+	"icon": "id",
+	"description": "Let users submit and vote for beer recipes",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "beer-recipe",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"keywords": ["mz","beer","recipe"]
+}

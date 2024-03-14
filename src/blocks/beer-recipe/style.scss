@@ -1,0 +1,202 @@
+// TODO: Import StarRating CSS and make readonly option with
+// .stars.readonly {
+//	pointer-events: none;
+//	.star {
+//		cursor: default;
+//	}
+
+.wp-block-mz-beer-recipe {
+	.new-review-form {
+		background-color: aliceblue;
+		padding: 20px;
+		max-width: 300px;
+		box-shadow: 1px 1px 4px #bbb;
+		border-radius: 4px;
+
+		input, textarea {
+			width: 100%;
+		}
+	}
+
+	.error-msg {
+		background-color: #fc1a1a;
+		padding: 30px;
+		color: white;
+	}
+
+	.review-list {
+
+	}
+
+	.review-card {
+		width: 100%;
+		padding: 10px 15px;
+		margin: 10px;
+		border: 1px solid #888;
+		box-shadow: 1px 1px 3px #bbb;
+		border-radius: 4px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+
+		.review-title {
+			font-weight: bold;
+		}
+
+		.review-content {
+			width: 100%;
+		}
+
+		.stars {
+			//text-align: center;
+			font-size: 1.5em;
+		}
+	}
+
+	.block-body {
+		//background-image: linear-gradient(rgba(33,33,33,0.6),rgba(33,33,33,0.6)),url("../../beer-background.jpg");
+		background: radial-gradient(rgba(50,33,255,0.6),rgba(33,33,33,0.6));
+		background-size: cover;
+
+
+	}
+
+	.beer-description {
+		display: block;
+		height: auto;
+		min-height: 100%;
+		transition: height 250ms;
+		border-top: 1px solid rgba(0,0,0,0.5);
+		padding-top: 2px;
+
+
+
+	}
+	.beer-description-hidden {
+		border-top: 1px solid rgba(0,0,0,0.5);
+		padding-top: 2px;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		height: 80px;
+		transition: height 250ms;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+	}
+	.beer-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		gap: 30px;
+		align-items: baseline;
+	}
+	.beer-card {
+		font-weight: bold;
+		height: auto;
+		min-height: 100%;
+		transition: height 250ms;
+		padding: 20px;
+		width: 300px;
+		background: rgba(255, 255, 255, 0.50);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+		border: 1px solid rgba(0, 255, 49, 0.31);
+
+	}
+	.beer-card-hover {
+		font-weight: bold;
+		border-image: linear-gradient(45deg, purple, orange) 1;
+		padding: 20px;
+		width: 300px;
+		cursor: pointer;
+		transition: height 250ms;
+		background: rgba(255, 255, 255, 0.50);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+
+		border: solid rgba(0, 255, 49, 0.31);
+		border-width: 0 5px 5px;
+
+	}
+	.beer-title {
+text-align: center;
+	}
+	.beer-type {
+
+	}
+
+
+	.beer-flavor {
+
+	}
+
+	.flex-container {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	.submit-beer-form {
+		margin: 50px;
+
+	}
+	.submit-beer-title{
+		color: white;
+		text-align: center;
+	}
+	.beer-form-entry {
+		text-align: left;
+	}
+	.beer-review-form{
+		text-align: center;
+		margin: 50px auto 50px;
+		padding: 20px;
+		max-width: 300px;
+		background: rgba(255, 255, 255, 0.50);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+		border: 1px solid rgba(0, 255, 49, 0.31);
+	}
+	.submit-beer-button {
+
+	}
+	.beer-image-container {
+		text-align: center;
+	}
+	.beer-icon {
+		font-size: 100px;
+		color: darkgoldenrod;
+	}
+	.abv {
+		overflow: hidden;
+		text-align: center;
+	}
+
+	.abv::before,
+	.abv::after {
+		background-color: #000;
+		content: "";
+		display: inline-block;
+		height: 1px;
+		position: relative;
+		vertical-align: middle;
+		width: 50%;
+	}
+
+	.abv::before {
+		right: 0.5em;
+		margin-left: -50%;
+	}
+
+	.abv::after {
+		left: 0.5em;
+		margin-right: -50%;
+	}
+}
